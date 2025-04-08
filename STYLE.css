@@ -1,0 +1,156 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+/* Styling the heading */
+h1 {
+  background-color: #081b31;
+  color: #fff;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  background-color: #808080; /* changed to hex for consistency */
+}
+
+/* Choices section */
+.choices {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 5rem;
+}
+
+/* Styling individual choices */
+.choice {
+  height: 165px;
+  width: 165px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff8c00, #ff2e63);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Hover and click effects */
+.choice:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.choice:active {
+  transform: scale(0.95);
+}
+
+/* Image inside choices */
+img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+/* Scoreboard styling */
+.score-board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  margin-top: 3rem;
+  gap: 5rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: darksalmon;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Score numbers */
+#user-score,
+#comp-score {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #081b31;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Message box */
+.msg-container {
+  margin-top: 5rem;
+}
+
+#msg {
+  background: #081b31;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animation for message change */
+@keyframes msgEffect {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.msg-container p {
+  animation: msgEffect 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .choices {
+    grid-auto-flow: row;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .choice {
+    width: 140px;
+    height: 140px;
+  }
+
+  img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .score-board {
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 1.5rem;
+  }
+
+  #user-score,
+  #comp-score {
+    font-size: 3rem;
+  }
+
+  #msg {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
